@@ -1,0 +1,35 @@
+[project]
+name = "hello-world"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "urllib3>=2.2.3",
+    "litestar==2.17.0",
+    "uvicorn",
+    "prefect==3.4.0",
+    "prefect-docker==0.6.4",
+    "prefect-aws==0.5.10",
+    "crawlee==0.6.11",
+    "camoufox==0.4.11"
+]
+
+[project.scripts]
+hello = "hello_world:hello"
+litestar = "litestar:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[dependency-groups]
+dev = [
+    "ruff>=0.6.7",
+    "debugpy==1.8.15",
+    "pyright==1.1.404"
+]
+
+# [tool.pyright]
+# venvPath = "."
+# venv = ".venv"
